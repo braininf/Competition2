@@ -1,0 +1,16 @@
+function devidedData = devidDataByFlash( data, dataTime, sampleRate, rowcol )
+
+%   参数说明：
+%   data：需要进行拆分的数据
+%   dataTime：取刺激后多少ms的数据
+%   sampleRate：采样率
+%   rowcol：一共有多少行列，也就是拆成多少份
+
+
+dataLength = dataTime / 1000 * sampleRate;
+
+[channelNum, dataTotalLength] = size( data );
+
+
+
+

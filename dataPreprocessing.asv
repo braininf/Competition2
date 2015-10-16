@@ -1,0 +1,37 @@
+function preprocessedData = dataPreprocessing( data, low, high, filterorder, sampleRate, windowSize, downsamplingParam )
+%   数据预处理
+%       1.Butterworth带通滤波
+%       2.光滑处理
+%       3.降采样
+%
+%   data：维数[rowcol,channel,data]
+%   low：lowpass
+%   high：highpass
+%   filterorder：filterorder
+%   sampleRate：采样率
+%   windowSize：smooth窗口大小
+%   downsamplingParam：降采样参数
+
+[channelNum, rowcolNum, dataLength] = size( data );
+downsamplingDataLength = ( downsamplingParam.end - downsamplingParam.beg ) / downsamplingParam.step;
+preprocessedData = zeros( channelNum, rowcolNum,  downsamplingDataLength );
+
+%初始化滤波参数
+filtercutoff = [low*2/samplingrate high*2/samplingrate]; 
+[f_b, f_a] = butter(filterorder,filtercutoff);
+
+for rowcol = 1 : rowcolNum
+    for channel = 1 : channelNum
+        curData = filter(f_b,f_a, reshape( data( channel, rowcol, : ), 1, dataLength ) );
+        curData = smooth( curData, windowSize );
+        curData = curData( 
+        curData = downsamplingData( curData, sampleRate, downsamplingParam );
+        preprocessedData( channel, rowcol, : ) = curData;
+    end
+end
+
+
+%降采样，波形开始点，波形结束点，隔几个点取一个
+preprocessedData = downsamplingData( preprocessedData, downsamplingRate );
+
+

@@ -1,0 +1,5 @@
+function devidedData = devidData( data, dataTime, sampleRate )
+
+dataLength = dataTime / 1000 * sampleRate;
+
+[channelNum, 
