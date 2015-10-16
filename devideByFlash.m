@@ -1,0 +1,2 @@
+function trial = devideByFlash( data )
+

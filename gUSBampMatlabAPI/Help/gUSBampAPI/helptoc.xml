@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!-- $Revision: 1.1.6.1 $ $Date: 2004/04/20 22:13:25 $ -->
+
+<toc version="3.10.00">
+
+<tocitem target="gUSBampAPI.htm" image="$toolbox/matlab/icons/book_mat.gif">gUSBamp MATLAB API
+<tocitem target="gUSBampAPI.htm" image="$toolbox/matlab/icons/pdficon.gif">Printable Documentation (PDF)</tocitem>     
+
+<tocitem target="http://www.gtec.at" image="$toolbox/matlab/icons/webicon.gif">g.tec Web Site</tocitem>
+
+</tocitem>
+</toc>

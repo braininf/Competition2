@@ -1,0 +1,3 @@
+function sortedData = getSortedData( data, numberSequence )
+
+[dataNum, dataLength] = size( 
